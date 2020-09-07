@@ -141,7 +141,8 @@ footer .content {
 }
 
 @media (max-width: 1024px) {
-  footer .content {
+  footer .content,
+  header nav {
     padding: 0 20px;
   }
 }
