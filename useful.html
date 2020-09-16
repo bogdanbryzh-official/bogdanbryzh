@@ -1,49 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffc40d" />
+    <meta name="msapplication-TileColor" content="#ffc40d" />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+    <meta name="theme-color" content="#ffc40d" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Bogdan Bryzh | Useful stuff</title>
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffc40d">
-  <meta name="msapplication-TileColor" content="#ffc40d">
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-  <meta name="theme-color" content="#ffc40d">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <title>Bogdan Bryzh | Home</title>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@600&display=swap" rel="stylesheet">
 
-<style>
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	overflow: hidden;
-}
-.link {
-	background-color: #252525;
-	color: #ffffff;
-	font-family: 'Courier New', monospace;
-	padding: 5px 7px;
-	border-radius: 4px;
-}
-</style>
-  <link rel="stylesheet" href="normalize.css">
-  <link rel="stylesheet" href="index.css">
-</head>
+    <style>
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+      .wrapper {
+		width: 100%;
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 12px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        /* align-items: center; */
+        height: 100vh;
+        overflow: hidden;
+      }
+	  .header {
+		color: #0070f3;
+		font-size: 1.2rem;
+		font-weight: 500;
+		margin: 2rem 0;
+		font-family: 'Inter', sans-serif;
+	  }
+	  .link-container {
+		  display: flex;
+		  justify-content: start;
+	  }
+      .link {
+        background-color: #0070f3;
+        color: #ffffff;
+        font-family: "Fira Code", monospace;
+        padding: 8px;
+        border-radius: 7px;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+        -webkit-user-select: none;
+        box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
+        transition-duration: 0.2s;
+      }
+      .link:hover {
+        box-shadow: 0 6px 20px rgba(0, 118, 255, 0.23);
+        background-color: rgba(0, 118, 255, 0.9);
+      }
+      .link * {
+        margin: 8px;
+      }
+    </style>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<body>
-	<div class='wrapper'>
-		<div class='link-container'>
-			<a class='link' href='http://mathprofi.ru/'>
-				Математика для профі
-			</a>
-		</div>
-	</div>
-</body>
-
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <p>Корисні посилання для групи КН-11</p>
+      </div>
+      <div class="link-container">
+        <a class="link" href="http://mathprofi.ru/">
+          <img src="./icons8-math-50.png" height="18" alt="edu pic" />
+          <p>Математика для профі</p>
+        </a>
+      </div>
+    </div>
+  </body>
 </html>
