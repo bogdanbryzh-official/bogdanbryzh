@@ -29,7 +29,6 @@
         width: 100%;
         max-width: 1000px;
         margin: 0 auto;
-        padding: 12px;
         display: flex;
         flex-direction: column;
         /* justify-content: center; */
@@ -38,21 +37,33 @@
         overflow: hidden;
       }
       .header {
-        color: #0070f3;
+        color: #ffffff;
+        background-color: #0070f3;
         font-size: 1.2rem;
         font-weight: 500;
-        margin: 2rem 0;
+        padding: 1rem 12px;
         font-family: "Inter", sans-serif;
       }
       .link-container {
         display: flex;
+        /* flex-direction: column; */
         justify-content: start;
+        flex-wrap: wrap;
+        padding: 0 12px;
+      }
+      .link-header {
+        font-family: "Inter", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding: 1rem;
+        color:  #2081f0;
       }
       .link {
+        margin-bottom: 1rem;
         background-color: #0070f3;
         color: #ffffff;
         font-family: "Fira Code", monospace;
-        padding: 8px;
+        padding: 10px;
         border-radius: 7px;
         vertical-align: middle;
         display: flex;
@@ -67,7 +78,7 @@
         background-color: rgba(0, 118, 255, 0.9);
       }
       .link * {
-        margin: 8px;
+        margin: 5px;
       }
       .link img {
         height: 18px;
@@ -82,14 +93,20 @@
       <div class="header">
         <p>Корисні посилання для групи КН-11</p>
       </div>
+      <div class="link-header">Матан</div>
       <div class="link-container">
         <a class="link" href="http://mathprofi.ru/">
-          <img src="./icons8-math-50.png" alt="edu pic" />
+          <img src="./keys.svg" alt="edu pic" />
           <p>Математика для профі</p>
+          <img src="./icons8-external-link.svg" alt="" />
         </a>
         <a class="link" href="./mathan.zip">
-          <img src="./icons8-zip-50.png" alt="zip" />
-          <p>Скачати додаток</p>
+          <img src="./zip.svg" alt="zip" />
+          <p>Скачати додаток (мат. аналіз)</p>
+        </a>
+        <a class="link" href="./la+ag.zip">
+          <img src="./zip.svg" alt="zip" />
+          <p>Скачати додаток (<abbr title="Лінійна алгебра та аналітична геометрія">ЛА+АГ</abbr>)</p>
         </a>
       </div>
     </div>
