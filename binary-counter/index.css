@@ -16,6 +16,10 @@ body {
 }
 
 @media screen and (min-width: 700px) {
+  .binary-calc {
+    display: flex;
+    flex-direction: column;
+  }
   .row {
     flex-direction: column;
   }
