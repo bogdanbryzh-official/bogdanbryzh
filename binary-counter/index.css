@@ -1,48 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@700&display=swap");
 
 body {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .wrapper {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .row {
-    display: flex;
+  display: flex;
+}
+
+@media screen and (min-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
 }
 .cell {
-    -webkit-user-select: none;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-    color: #fff;
-    margin: 2px;
-    font-family: 'Source Code Pro', monospace;
-    font-size: 2.2rem;
+  -webkit-user-select: none;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  margin: 2px;
+  font-family: "Source Code Pro", monospace;
+  font-size: 2.2rem;
 }
 .row-1 .cell {
-    background-color: #826276;
-    border: 2px solid #5e4655;
+  background-color: #826276;
+  border: 2px solid #5e4655;
 }
 .row-2 .cell {
-    background-color: #46b2b5;
-    border: 2px solid #318284;
+  background-color: #46b2b5;
+  border: 2px solid #318284;
 }
 .row-3 .cell {
-    background-color: #f8b323;
-    border: 2px solid #b68317;
-    cursor: pointer;
+  background-color: #f8b323;
+  border: 2px solid #b68317;
+  cursor: pointer;
 }
 div.cell.output {
-    cursor: default;
-    background-color: #fff;
-    color: #000;
-    border: 2px solid #f8b323;
+  cursor: default;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #f8b323;
 }
