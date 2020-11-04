@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lab 3</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Roboto, sans-serif;
+                font-size: 16px;
+            }
+            main {
+                width: 100%;
+                max-width: 1080px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            header {
+                width: 100%;
+                background-color: #1a237e;
+                color: #ffffff;
+                padding: 25px;
+                font-size: 20px;
+                text-transform: uppercase;
+            }
+            header p {
+                width: 100%;
+                max-width: 1080px;
+                margin: 0 auto;
+                padding: 0 30px;
+            }
+            main h2 {
+                padding: 20px 5px;
+                font-size: 20px;
+                font-weight: 500;
+                color: #333;
+            }
+            code {
+                font-family: 'Fira Code', monospace;
+                color: maroon;
+                background-color: lightgoldenrodyellow;
+                padding: 1px 3px;
+            }
+            pre {
+                font-family: 'Fira Code', monospace;
+                background-color: #0d1016;
+                color: #ffffff;
+                padding: 20px;
+                border-radius: 7px;
+            }
+            pre .text {
+                color: #b7d935;
+            }
+            pre .command {
+                color: #ff7f28;
+            }
+            pre .bool {
+                color: #ff2869;
+            }
+            pre .var {
+                color: #f8f167;
+            }
+            pre .bracket {
+                color: #e0d706;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header><p>Лабораторна робота 3</p></header>
+            <main>
+                <h2>
+                    Створити командний файл для форматування дискети і копіювання на неї файлів: <code>format.com</code>, <code>diskcopy.com</code>, <code>mem.exe</code>
+                </h2>
+                <pre><span class="command">@echo</span> <span class="command">off</span>
+<span class="command">cls</span>
+
+:<span class="command">start</span>
+<span class="command">echo</span> Put a diskette into drive A:
+<span class="command">pause</span>
+
+<span class="command">if</span> <span class="bool">not</span> <span class="command">exist</span> A: <span class="bracket">(</span>
+    <span class="command">cls</span>
+    <span class="command">echo</span> Try again
+    <span class="command">goto</span> <span class="command">start</span>
+<span class="bracket">)</span>
+
+<span class="command">format</span> A:
+<span class="command">copy</span> C:\dos\format.com A:\
+<span class="command">copy</span> C:\dos\diskcopy.com A:\
+<span class="command">copy</span> C:\dos\mem.exe A:\
+
+<span class="command">echo</span> Job done</pre>
+
+                <h2>Створити командний файл для завантаження архіватора і драйверів для українізації.</h2>
+                <pre><span class="command">@echo</span> <span class="command">off</span>
+<span class="command">cls</span>
+<span class="command">echo</span> Loading archivator
+arj
+<span class="command">echo</span> Loading ukrainisation driver
+key</pre>
+                    <h2>Створити командний файл для запуску однієї з двох прикладних програм.</h2>
+                <pre><span class="command">@echo</span> <span class="command">off</span>
+<span class="command">cls</span>
+
+<span class="command">choice</span> /c ab /m <span class="text">"Which program do you want to load? (A - notepad, B - code)"</span>
+<span class="command">if</span> <span class="command">errorlevel</span> <span class="var">2</span> <span class="command">goto</span> load_code
+<span class="command">if</span> <span class="command">errorlevel</span> <span class="var">1</span> <span class="command">goto</span> load_notepad
+<span class="command">goto</span> end
+
+:<span class="command">load_notepad</span>
+<span class="command">echo</span> Loading notepad
+notepad
+<span class="command">goto</span> end
+
+:<span class="command">load_code</span>
+<span class="command">echo</span> Loading code
+code
+<span class="command">goto</span> end
+
+:<span class="command">end</span></pre>
+                    <h2>Створити командний файл для створення на вказаному диску каталогу <code>PAS</code>, копіювання в нього файлів <code>*.pas</code> із свого диска, знищення на своєму диску всіх файлів з розширенням <code>*.bak</code> та <code>*.exe</code>.</h2>
+                    <pre><span class="command">@echo</span> <span class="command">off</span>
+<span class="command">cls</span>
+
+<span class="command">if</span> <span class="text">"%</span><span class="var">1</span><span class="text">"</span><span class="command">==</span><span class="text">""</span> <span class="bracket">(</span>
+    <span class="command">echo</span> No drive letter specified
+    <span class="command">goto</span> end
+<span class="bracket">)</span>
+
+<span class="command">if</span> <span class="command">exist</span> %<span class="var">1</span>\pas <span class="bracket">(</span>
+    <span class="command">echo</span> Folder already exists
+    <span class="command">echo</span> Cleaning
+    <span class="command">rmdir</span> %<span class="var">1</span>\pas /s
+<span class="bracket">)</span>
+
+<span class="command">mkdir</span> %<span class="var">1</span>\pas
+
+<span class="command">if</span> <span class="bool">not</span> <span class="command">exist</span> *.pas <span class="bracket">(</span>
+    <span class="command">echo</span> No *.pas files found
+    <span class="command">echo</span> Continuing...
+<span class="bracket">)</span>
+<span class="command">if</span> <span class="command">exist</span> *.pas <span class="command">copy</span> *.pas %<span class="var">1</span>\pas
+
+<span class="command">if</span> <span class="command">exist</span> *.bak <span class="command">del</span> *.bak
+<span class="command">if</span> <span class="command">exist</span> *.exe <span class="command">del</span> *.exe
+
+:<span class="command">end</span></pre>
+                        <h2>Створити командний файл для перегляду вказаного файлу, якщо файлу немає – вивести на екран про це повідомлення.</h2>
+                        <pre><span class="command">@echo</span> <span class="command">off</span>
+<span class="command">cls</span>
+
+<span class="command">if</span> <span class="text">"%</span><span class="var">1</span><span class="text">"</span><span class="command">==</span><span class="text">""</span> <span class="bracket">(</span>
+    <span class="command">echo</span> No filename or path provided
+    <span class="command">goto</span> end
+<span class="bracket">)</span>
+
+<span class="command">if</span> <span class="bool">not</span> <span class="command">exist</span> %<span class="var">1</span> <span class="bracket">(</span>
+    <span class="command">echo</span> File not found
+    <span class="command">echo</span> Check your filename or path and try again
+    <span class="command">goto</span> end
+<span class="bracket">)</span>
+
+<span class="command">more</span> %<span class="var">1</span>
+
+:<span class="command">end</span></pre>
+            </main>
+        </div>
+    </body>
+</html>
